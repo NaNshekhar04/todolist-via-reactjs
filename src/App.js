@@ -15,7 +15,12 @@ console.log(todos);
 
   return (
     <div className="App">
-        <h1>TODO LIST REACT</h1> 
+        <h1>TODO LIST REACT</h1>
+        <hr />
+        <div className="container">
+        {
+          todos.map((todo)=> ( <div key={todo.id}  className="InnerDiv"><div className="num">{todo.id} </div> <div>{todo.title}</div></div> ))}
+        </div>
     </div>
   );
 }
