@@ -19,7 +19,7 @@ console.log(todos);
         <hr />
         <div className="container">
         {
-          todos.map((todo)=> ( <div key={todo.id}  className="InnerDiv"><div className="num">{todo.id} </div> <div>{todo.title}</div></div> ))}
+          todos.map((todo)=> ( <div key={todo.id}  className="InnerDiv"><div className="num">{todo.id} </div> <div className="title">{todo.title}</div> <div className="status"> Status= <input type="checkbox" checked={todo.completed} /></div> </div> ))}
         </div>
     </div>
   );

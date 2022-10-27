@@ -12,3 +12,30 @@ code {
     monospace;
 }
 
+.container{
+  align-items: center;
+  margin-top: 5px;
+}
+
+
+.InnerDiv{
+  display: flex;
+  text-align: center;
+  justify-content: space-around;
+  margin: 10px 10px;
+  height: 30px;
+  width: 800px;
+  border-radius: 5px;
+  border: 0.5px solid black;
+}
+
+.num{
+  position: absolute;
+  left: 2%;
+}
+
+.status{
+  position: absolute;
+  right: 43%;
+}
+
