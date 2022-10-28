@@ -17,12 +17,17 @@ code {
 
 * {
   box-sizing: border-box;
-  margin: 0;
+  margin: 0; 
   padding: 0;
 }
 
 body {
   font-family: 'Poppins', sans-serif;
+  /* background-image: url('../src/assets/bgImg3.jpg');
+  background-repeat: repeat;
+  background-size: contain; */
+  background-image: linear-gradient(to right, rgb(209, 88, 209) , rgb(240, 240, 82));
+  color: aliceblue;
 }
 
 .eachTodo{
@@ -32,16 +37,19 @@ body {
   font-weight: bold;
   font-size: larger;
   align-items: center;
+  box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+ 
 }
 
 .addContainer{
     position: relative;
-    left: 30%;
+    left: 25%;
     margin-top: 2%;
     margin-bottom: 1%;
     display: flex;
-    flex-direction: column;
-    width: 25%;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 30%;
 
 }
 
@@ -77,6 +85,7 @@ li{
   cursor: pointer;
   text-decoration: none;
   font-size: 15px;
+  font-weight: 500;
   font-family: inherit;
   border: none;
 }
@@ -91,6 +100,7 @@ li{
     cursor: pointer;
     text-decoration: none;
     font-size: 15px;
+    font-weight: 500;
     font-family: inherit;
     border: none;
   }
@@ -98,16 +108,18 @@ li{
 
   .updateTodo{
     display: inline-block;
-    background: steelblue;
+    background: blue;
     color: #fff;
     padding: 10px 20px;
     margin: 5px;
     border-radius: 5px;
     cursor: pointer;
     text-decoration: none;
-    font-size: 15px;
+    font-size: 20px;
+    font-weight: 500;
     font-family: inherit;
     border: none;
+    
   }
 .addButton{
     display: inline-block;
@@ -118,7 +130,8 @@ li{
     border-radius: 5px;
     cursor: pointer;
     text-decoration: none;
-    font-size: 15px;
+    font-size: 20px;
+    font-weight: 500;
     font-family: inherit;
     border: none;
   }
@@ -128,6 +141,33 @@ li{
   flex-direction: column;
   position: fixed;
   top: 5%;
-  right: 4%;
+  right: 2%;
 
+}
+
+.heading{
+  color: black;
+  text-align: center;
+  font-family: Verdana, Tahoma, sans-serif; 
+  font-size: 250;
+  font-weight: 400;
+}
+
+
+.input{
+  padding:10px;
+  border-radius:10px;
+  border: 0;
+  box-shadow:0 0 15px 4px rgba(0,0,0,0.20);
+  background-color: white;
+}
+
+.addInput{
+  padding:10px;
+  border-radius:10px;
+  border: 0;
+  box-shadow:0 0 15px 4px rgba(0,0,0,0.20);
+  background-color: white;
+  height: 55px;
+  margin-right: 10px;
 }

@@ -96,27 +96,27 @@ function App() {
 
   return (
     <div className="App">
+        <h1 className="heading">TODO LIST</h1>
       <div className="addContainer">
-        <h1>TODO LIST REACT</h1>
-        <input type="text" value={title} onChange={(e) => { setTitle(e.target.value) }} name="name" /> <br />
-        <input type="text" value={completed} onChange={(e) => { setCompleted(e.target.value) }} name="completed" /> <br />
+        <input className="addInput" type="text" value={title} onChange={(e) => { setTitle(e.target.value) }} name="name" /> <br />
+        <input className="addInput" type="text" value={completed} onChange={(e) => { setCompleted(e.target.value) }} name="completed" /> <br />
         <button className="addButton" onClick={addTodo}>Add</button>
       </div>
       <div className="updateBox">
-        <h1>UPDATE A TODO</h1>
-        <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} /><br />
-        <input type="text" value={completed} onChange={(e) => setCompleted(e.target.value)} /><br /> 
+        <h1 className="heading">UPDATE A TODO</h1>
+        <input className="input" type="text" value={title} onChange={(e) => setTitle(e.target.value)} /><br />
+        <input className="input" type="text" value={completed} onChange={(e) => setCompleted(e.target.value)} /><br /> 
         <button className="updateTodo" onClick={updateTodo}>Update a Todo</button>
       </div>
 
-      <hr />
+      
       <div className="container">
         {
           todos.map((todo) => {
 
             return <div>
               <ul class="list-group">
-                <li class="list-group-item list-group-item-secondary list-group-item-action w-75 p-3 h-25 d-inline-block">
+                <li class="list-group-item list-group-item-info list-group-item-action w-75 p-3 h-25 d-inline-block">
                   <div className="eachTodo">
                     <div className="title" key={todo.id - 1}>
                       {todo.title}
