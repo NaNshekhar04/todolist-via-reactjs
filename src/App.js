@@ -70,14 +70,25 @@ function App() {
         <div className="container">
         {
           todos.map((todo)=> {
-           return <div key={todo.id-1}  className="InnerDiv">
-            <div className="title">{todo.title}</div> 
-            <div className="status"> Status= <input type="checkbox" checked={todo.completed} defaultChecked={todo.completed} />
-            <button onClick={()=>onDelete(todo.id)}>Delete</button>
-            </div> 
-            <div> 
-              </div>
-             </div> 
+            
+            return <div>
+                      <ul class="list-group">
+            <li class="list-group-item list-group-item-secondary list-group-item-action w-75 p-3 h-25 d-inline-block">
+              <div className="eachTodo">
+                <div className="title">
+            {todo.title}
+            </div>
+            <div className="status">
+           Status:- <input class="form-check-input me-1" type='checkbox'  checked={todo.completed} defaultChecked={todo.completed}/>
+           </div>
+            <div className="btns">
+           <button className="delete" onClick={()=>onDelete(todo.id)}>Delete</button>
+           <button className="update" >Update</button>
+           </div>
+           </div>
+            </li>
+            </ul>
+            </div>
           })}
         </div>
     </div>
@@ -85,3 +96,12 @@ function App() {
 }
 
 export default App;
+
+{/* <div key={todo.id-1}  className="InnerDiv">
+<div className="title">{todo.title}</div> 
+<div className="status"> Status= <input type="checkbox" checked={todo.completed} defaultChecked={todo.completed} />
+<button onClick={()=>onDelete(todo.id)}>Delete</button>
+</div> 
+<div> 
+  </div>
+ </div>  */}

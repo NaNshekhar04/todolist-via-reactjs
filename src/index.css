@@ -12,30 +12,37 @@ code {
     monospace;
 }
 
-.container{
-  align-items: center;
-  margin-top: 5px;
-}
 
-
-.InnerDiv{
+.eachTodo{
   display: flex;
-  text-align: center;
-  justify-content: space-around;
-  margin: 10px 10px;
-  height: 30px;
-  width: 800px;
-  border-radius: 5px;
-  border: 0.5px solid black;
+  max-width: 800px;
+  justify-content: space-between;
 }
 
-.num{
-  position: absolute;
-  left: 2%;
+li{
+  margin-top: 2%;
+}
+
+.title{
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 300px;
 }
 
 .status{
+  display: flex;
   position: absolute;
-  right: 43%;
+  left: 60%;
 }
 
+.btns{
+  /* display: flex;
+  justify-content: space-around; */
+  position: relative;
+  margin-left: 2%;
+}
+
+.delete{
+  border: 0%;
+  margin-right: 20px;
+}
