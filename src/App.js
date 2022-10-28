@@ -2,14 +2,22 @@ import React, { useEffect, useState } from "react";
 import { Navbar } from "./Navbar";
 
 function App() {
+
+  // Creating Multiple useState Hook !
+
   const [todos, setTodos] = useState([])
   const [title, setTitle] = useState('');
   const [completed, setCompleted] = useState(false);
-  const [userId, setUserId] = useState();
+  const [userId, setUserId] = useState(1);
+
+  // Creating useEffect Hook to Fetch
 
   useEffect(() => {
     getTodos()
   }, [])
+
+
+  // Fetching Up Todos from API 
 
   function getTodos() {
     fetch('https://jsonplaceholder.typicode.com/todos').then((result) => {
@@ -24,7 +32,7 @@ function App() {
     })
   }
 
-  //ADDING A TODO !
+  //ADDING A TODO FUNCTION !
 
   const addTodo = () => {
     console.log({ title, completed, userId });
@@ -42,7 +50,7 @@ function App() {
     })
   }
 
-  // DELETING A TODO !
+  // DELETING A TODO FUNCTION !
 
   const onDelete = (id) => {
     fetch(`https://jsonplaceholder.typicode.com/todos/${id}`, {
@@ -71,7 +79,7 @@ function App() {
     setUserId(item.id)
   }
 
-  // UPDATING A TODO !
+  // UPDATING A TODO FUNCTION !
 
   const updateTodo = () => {
     let item = { title, completed, userId }
@@ -97,43 +105,56 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar/>
+
+      {/* Navbar Component  */}
+
+      <Navbar />
+
+      {/* Adding Todo Form  */}
+
       <h1 className="addHeading">ENTER YOUR TODO !</h1>
       <div className="addContainer">
         <input className="addInput" type="text" value={title} onChange={(e) => { setTitle(e.target.value) }} name="name" /> <br />
         <input className="addInput" type="text" value={completed} onChange={(e) => { setCompleted(e.target.value) }} name="completed" /> <br />
         <button className="addButton" onClick={addTodo}>Add</button>
       </div>
+
+      {/* Updating a Todo Form  */}
+
       <div className="updateBox">
         <h1 className="heading">UPDATE A TODO</h1>
         <input className="input" type="text" value={title} onChange={(e) => setTitle(e.target.value)} /><br />
-        <input className="input" type="text" value={completed} onChange={(e) => setCompleted(e.target.value)} /><br /> 
+        <input className="input" type="text" value={completed} onChange={(e) => setCompleted(e.target.value)} /><br />
         <button className="updateTodo" onClick={updateTodo}>Update a Todo</button>
       </div>
 
-      
+
+      {/* Mapping Over Todos and displaying them into Lists  */}
+
       <div className="container">
         {
           todos.map((todo) => {
 
-            return <div>
-              <ul class="list-group">
-                <li class="list-group-item list-group-item-dark list-group-item-action w-75 p-3 h-25 d-inline-block">
-                  <div className="eachTodo">
-                    <div className="title" key={todo.id - 1}>
-                      {todo.title}
+            return (
+              <div>
+                <ul class="list-group">
+                  <li class="list-group-item list-group-item-dark list-group-item-action w-75 p-3 h-25 d-inline-block">
+                    <div className="eachTodo">
+                      <div className="title" key={todo.id - 1}>
+                        {todo.title}
+                      </div>
+                      <div className="status">
+                        Status:- <input class="form-check-input me-1" type='checkbox' checked={todo.completed} defaultChecked={todo.completed} />
+                      </div>
+                      <div className="btns">
+                        <button className="delete" onClick={() => onDelete(todo.id)}>Delete</button>
+                        <button className="update" onClick={() => onUpdate(todo.id)}>Update</button>
+                      </div>
                     </div>
-                    <div className="status">
-                      Status:- <input class="form-check-input me-1" type='checkbox' checked={todo.completed} defaultChecked={todo.completed} />
-                    </div>
-                    <div className="btns">
-                      <button className="delete" onClick={() => onDelete(todo.id)}>Delete</button>
-                      <button className="update" onClick={() => onUpdate(todo.id)}>Update</button>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </div>
+                  </li>
+                </ul>
+              </div>
+            )
           })}
       </div>
     </div>
