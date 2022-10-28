@@ -1,3 +1,6 @@
+
+// Importing useState and useEffect Hook from React
+
 import React, { useEffect, useState } from "react";
 import { Navbar } from "./Navbar";
 
@@ -93,7 +96,7 @@ function App() {
     }).then((result) => {
       result.json().then((resp) => {
         console.log(resp);
-        const ans = todos.filter((item) => item.id == userId)
+        const ans = todos.filter((item) => item.id === userId)
         ans[0].title = title
         ans[0].completed = completed
         setTodos([...todos, ans])
