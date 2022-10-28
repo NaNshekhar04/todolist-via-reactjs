@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Navbar } from "./Navbar";
 
 function App() {
   const [todos, setTodos] = useState([])
@@ -96,7 +97,8 @@ function App() {
 
   return (
     <div className="App">
-        <h1 className="heading">TODO LIST</h1>
+      <Navbar/>
+      <h1 className="addHeading">ENTER YOUR TODO !</h1>
       <div className="addContainer">
         <input className="addInput" type="text" value={title} onChange={(e) => { setTitle(e.target.value) }} name="name" /> <br />
         <input className="addInput" type="text" value={completed} onChange={(e) => { setCompleted(e.target.value) }} name="completed" /> <br />
@@ -116,7 +118,7 @@ function App() {
 
             return <div>
               <ul class="list-group">
-                <li class="list-group-item list-group-item-info list-group-item-action w-75 p-3 h-25 d-inline-block">
+                <li class="list-group-item list-group-item-dark list-group-item-action w-75 p-3 h-25 d-inline-block">
                   <div className="eachTodo">
                     <div className="title" key={todo.id - 1}>
                       {todo.title}

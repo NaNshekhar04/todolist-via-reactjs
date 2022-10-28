@@ -140,19 +140,32 @@ li{
   display: flex;
   flex-direction: column;
   position: fixed;
-  top: 5%;
+  top: 10%;
   right: 2%;
 
 }
 
 .heading{
-  color: black;
+  height: 65px;
+  color: white;
+  text-shadow: 2px 2px 15px black;
   text-align: center;
   font-family: Verdana, Tahoma, sans-serif; 
   font-size: 250;
   font-weight: 400;
+
 }
 
+.addHeading{
+  height: 65px;
+  color: white;
+  text-shadow: 2px 2px 15px black;
+  text-align: center;
+  font-family: Verdana, Tahoma, sans-serif; 
+  font-size: 250;
+  font-weight: 400;
+  margin-right: 15%;
+}
 
 .input{
   padding:10px;
@@ -160,6 +173,7 @@ li{
   border: 0;
   box-shadow:0 0 15px 4px rgba(0,0,0,0.20);
   background-color: white;
+
 }
 
 .addInput{
@@ -170,4 +184,24 @@ li{
   background-color: white;
   height: 55px;
   margin-right: 10px;
+}
+
+
+
+/* header/ */
+
+.header{
+  display: flex;
+  text-align: center;
+  height: 65px;
+  color: white;
+  padding: 10px;
+}
+
+.header-title{
+  font-size: 30px;
+  margin-left: 15px;
+  margin-right: auto;
+  margin-top: 5px;
+  text-shadow: 2px 2px 15px black;
 }
