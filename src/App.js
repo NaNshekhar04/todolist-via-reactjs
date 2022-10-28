@@ -24,7 +24,7 @@ function App() {
 
     //ADDING A TODO
 
-    function addTodo(){
+    const addTodo = ()=>{
       console.log({title, completed, });
       let index = todos.length;
       const data = {title, completed, id:index+1,userId:1}
@@ -40,6 +40,26 @@ function App() {
       })
     }
 
+   // DELETING A TODO
+
+   const onDelete =  (id) => {
+     fetch(`https://jsonplaceholder.typicode.com/todos/${id}`, {
+      method: 'DELETE',
+    })
+      .then((res) => {
+        if (res.status !== 200) {
+          return
+        } else {
+          setTodos(todos.filter((todo) => {
+            return todo.id !== id;
+          }))
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+  }
+
   return (
     <div className="App">
         <h1>TODO LIST REACT</h1>
@@ -52,7 +72,9 @@ function App() {
           todos.map((todo)=> {
            return <div key={todo.id-1}  className="InnerDiv">
             <div className="title">{todo.title}</div> 
-            <div className="status"> Status= <input type="checkbox" checked={todo.completed} defaultChecked={todo.completed} /></div> 
+            <div className="status"> Status= <input type="checkbox" checked={todo.completed} defaultChecked={todo.completed} />
+            <button onClick={()=>onDelete(todo.id)}>Delete</button>
+            </div> 
             <div> 
               </div>
              </div> 
