@@ -96,16 +96,17 @@ function App() {
 
   return (
     <div className="App">
-      <h1>TODO LIST REACT</h1>
-      <input type="text" value={title} onChange={(e) => { setTitle(e.target.value) }} name="name" />
-      <input type="text" value={completed} onChange={(e) => { setCompleted(e.target.value) }} name="completed" />
-      <button type="button" className="btn" onClick={addTodo}>Add</button>
-
+      <div className="addContainer">
+        <h1>TODO LIST REACT</h1>
+        <input type="text" value={title} onChange={(e) => { setTitle(e.target.value) }} name="name" /> <br />
+        <input type="text" value={completed} onChange={(e) => { setCompleted(e.target.value) }} name="completed" /> <br />
+        <button className="addButton" onClick={addTodo}>Add</button>
+      </div>
       <div className="updateBox">
-        <h5>UPDATE A TODO</h5>
+        <h1>UPDATE A TODO</h1>
         <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} /><br />
-        <input type="text" value={completed} onChange={(e) => setCompleted(e.target.value)} /><br />
-        <button onClick={updateTodo}>Update a Todo</button>
+        <input type="text" value={completed} onChange={(e) => setCompleted(e.target.value)} /><br /> 
+        <button className="updateTodo" onClick={updateTodo}>Update a Todo</button>
       </div>
 
       <hr />
