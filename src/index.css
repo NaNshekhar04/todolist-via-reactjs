@@ -36,8 +36,6 @@ li{
 }
 
 .btns{
-  /* display: flex;
-  justify-content: space-around; */
   position: relative;
   margin-left: 2%;
 }
@@ -45,4 +43,10 @@ li{
 .delete{
   border: 0%;
   margin-right: 20px;
+}
+
+.updateBox{
+  position: absolute;
+  top: 20%;
+  right: 5%;
 }
